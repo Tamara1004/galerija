@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slots="start">
+      <ion-back-button defaultHref="/gallery"></ion-back-button>
+      <ion-title>Liked</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let picture of likedPictures" [routerLink]="picture.id">
+      <ion-avatar slot="start">
+        <ion-img [src]="picture.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ picture.description }}</ion-label>
+      <ion-button slot="end" (click)="onRemovePicture(picture.id)">Remove</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-buttons class="ion-justify-content-center">
+    <ion-button routerLink="/gallery" size="large" shape="round" color="tertiary" fill="solid" style="margin-top: 20px;">
+      Gallery
+    </ion-button>
+  </ion-buttons>
+
+</ion-content>

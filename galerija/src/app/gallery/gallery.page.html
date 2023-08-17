@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+
+<ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+</ion-buttons>
+
+<ion-title>Gallery</ion-title>
+<ion-buttons slot = "end">
+  <ion-fab-button size="small" color="tertiary" (click)="openModal()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Add buttons within the app-picture-element component -->
+    <app-picture-element *ngFor="let picture of gallery" [gallery]="picture">
+      <ion-item>
+        <ion-label>{{ picture.description }}</ion-label>
+      </ion-item>
+      <ion-button (click)="deletePicture(picture.id)">DELETE</ion-button>
+      <ion-button (click)="openUpdateModal(picture.id)">UPDATE</ion-button>
+    </app-picture-element>
+  </ion-list>
+
+  <ion-buttons class="ion-justify-content-center">
+    <ion-button size="large" shape="round" routerLink="/liked" color="tertiary" fill="solid" style="margin-top: 20px;">
+      Liked pictures
+    </ion-button>
+  </ion-buttons>
+</ion-content>
+
+
+
+ 

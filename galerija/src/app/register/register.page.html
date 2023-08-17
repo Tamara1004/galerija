@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>Register Form</ion-card-title>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+
+
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Surname</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+
+              
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="email"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="onRegister()" type="submit" color="primary" shape="round" expand="block">Register</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

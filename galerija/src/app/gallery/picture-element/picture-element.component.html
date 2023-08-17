@@ -1,0 +1,17 @@
+<ion-item>
+  <ion-item [routerLink]="gallery.id">
+    <ion-avatar slot="start">
+      <ion-img [src]="gallery.imageUrl"></ion-img>
+    </ion-avatar>
+    <ion-label>{{gallery.description}}</ion-label>
+  </ion-item>
+
+  <!-- Add DELETE and UPDATE buttons here -->
+  <ion-buttons slot="end">
+    <ion-button (click)="deletePicture(gallery.id)">DELETE</ion-button>
+    <ion-button (click)="openUpdateModal(gallery.id)">UPDATE</ion-button>
+  </ion-buttons>
+
+  <!-- Keep the heart icon for liking the picture -->
+  <ion-icon name="heart" color="tertiary" slot="end" (click)="openAlert($event)"></ion-icon>
+</ion-item>

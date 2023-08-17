@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slots="start">
+      <ion-back-button defaultHref="/gallery"></ion-back-button>
+      <ion-title>picture-details</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-padding">
+    <ion-img [src]="gallery.imageUrl"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{gallery.description}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{gallery.id}}</ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+<!--Stranica koja sluzi da, kada se klikne na
+neku od slika, otvara se nova stranica gde se 
+moze videti cela slika i ipsod nje description
+i id. Videti da se u url-u nalazi p1, p2,... 
+odnosno ID-evi slike na koju smo usli-->

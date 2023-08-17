@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar> <!--toolbar sluzi za fiksiranje sadrzaja na stranici-->
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>Login Form</ion-card-title>
+
+        <form #loginForm="ngForm" (ngSubmit)="onLogIn(loginForm)">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-list>
+
+                <ion-item>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input type="email" ngModel name="email" required email  #email="ngModel"></ion-input>
+                </ion-item>
+                
+                <ion-item lines="none" *ngIf="email.invalid && email.touched">
+                  <ion-label>Invalid email address.</ion-label>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="password" ngModel name="password" required minlength="5" #password="ngModel"></ion-input>
+                </ion-item>
+      
+               <ion-item lines="none" *ngIf="password.invalid && password.touched">
+                <ion-label>Password must contain at least 5 characters.</ion-label>
+               </ion-item>
+
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="full" position="floating" type="submit" shape="round" [disabled]="loginForm.invalid">Log in</ion-button> <!--ovde nam je dugme disableovano sve dok ne unesemo i email i password sa najmanje 5 karaktera-->
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="full" color="primary" routerLink="/register">Register</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>        
+      </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
