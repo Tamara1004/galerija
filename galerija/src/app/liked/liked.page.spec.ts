@@ -6,12 +6,15 @@ describe('LikedPage', () => {
   let fixture: ComponentFixture<LikedPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(LikedPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = TestBed.createComponent(LikedPage); //kreira se instanca komponente LikedPage
+    component = fixture.componentInstance; //dodeljujemo instancu varijabli component
+    fixture.detectChanges(); //metoda se poziva da detektuje promene u komponenti
   }));
 
-  it('should create', () => {
+  it('should create', () => { //provera da li je instanca setovana
     expect(component).toBeTruthy();
   });
+
+
+  //Kreira instancu komponente LikedPage i proverava da li je instanca uspesno kreirana 
 });

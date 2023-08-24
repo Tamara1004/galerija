@@ -13,7 +13,7 @@ import { RegisterPageModule } from './register/register.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule, //importovali smo za firebase
   ],
   bootstrap: [AppComponent],
 })

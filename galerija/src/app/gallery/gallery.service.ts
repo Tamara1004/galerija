@@ -21,13 +21,14 @@ export class GalleryService {
   pictureDeleted = new EventEmitter<string>();
 
  
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {//bitno da se injectuje http
     this.getPicture().subscribe((gallery) => {
       this._gallery.next(gallery); // Update the shared gallery list with the fetched data
     });
   }
 
 
+  //za dodavanje u bazu, prima opis i img url
   addPicture(description: string, imageUrl:string) { //kad se klikne na add Picture poziva se post metoda, povratna vrednost je id slike, tu povratnu vrednost presrecemo pomocu map citata i prosirujemo niz u servisu i vracamo kao novu povratnu vrednost prosiren niz citata
     let generatedId: string; 
     return this.http.post<{name: string}>(`https://gallery-app-base-default-rtdb.europe-west1.firebasedatabase.app/picture.json`,

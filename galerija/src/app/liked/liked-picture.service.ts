@@ -30,12 +30,12 @@ export class LikedPictureService {
     }
   }
 
-  deleteLikedPicture(pictureId: string) {
+  deleteLikedPicture(pictureId: string) { //brise sliku sa datim pictureId iz liste omiljenih slika i azurira skladiste nakon toga
     this.likedPictures = this.likedPictures.filter(picture => picture.id !== pictureId);
     this.updateLocalStorage();
   }
 
-  updateLikedPicture(pictureId: string, newDescription: string) {
+  updateLikedPicture(pictureId: string, newDescription: string) { //azurira opis omiljene slike sa datim pictureId
     const likedPicture = this.findLikedPictureById(pictureId);
     if (likedPicture) {
       likedPicture.description = newDescription;
@@ -48,7 +48,7 @@ export class LikedPictureService {
   }
 
   
-  private findLikedPictureById(pictureId: string): Gallery | undefined {
+  private findLikedPictureById(pictureId: string): Gallery | undefined { 
     return Array.from(this.likedPictures).find((picture) => picture.id === pictureId);
   }
 

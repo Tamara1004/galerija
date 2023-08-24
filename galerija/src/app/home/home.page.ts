@@ -22,7 +22,7 @@ export class HomePage {
     if(form.invalid){ //ako forma nije validna nece moci da se uloguje
       return;
     }
-   this.authService.logIn();
+   this.authService.logIn(); //true
    this.router.navigateByUrl('/gallery');
   }
 

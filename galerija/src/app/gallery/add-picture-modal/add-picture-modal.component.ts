@@ -18,7 +18,7 @@ export class AddPictureModalComponent  implements OnInit {
 
   ngOnInit() {}
 
-  onAddPicture() {
+  onAddPicture() { //!!!
     if(!this.form.valid) { 
       return; 
     }
